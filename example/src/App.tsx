@@ -28,6 +28,7 @@ import ScrollOnHeader from './ScrollOnHeader'
 import ScrollableTabs from './ScrollableTabs'
 import Snap from './Snap'
 import StartOnSpecificTab from './StartOnSpecificTab'
+import StretchableHeader from './StretchableHeader'
 import UndefinedHeaderHeight from './UndefinedHeaderHeight'
 import { ExampleComponentType } from './types'
 
@@ -48,6 +49,7 @@ const EXAMPLE_COMPONENTS: ExampleComponentType[] = [
   DynamicTabs,
   MinHeaderHeight,
   AnimatedHeader,
+  StretchableHeader,
   AndroidSharedPullToRefresh,
 ]
 

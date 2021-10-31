@@ -235,6 +235,7 @@ export const useScrollHandlerY = (name: TabName) => {
     isSnapping,
     snappingTo,
     contentHeights,
+    overScrollEnabled,
   } = useTabsContext()
 
   const enabled = useSharedValue(false)
@@ -354,12 +355,9 @@ export const useScrollHandlerY = (name: TabName) => {
               (containerHeight.value || 0) +
               contentInset.value
             // make sure the y value is clamped to the scrollable size (clamps overscrolling)
-            scrollYCurrent.value = interpolate(
-              y,
-              [0, clampMax],
-              [0, clampMax],
-              Extrapolate.CLAMP
-            )
+            scrollYCurrent.value = overScrollEnabled
+              ? y
+              : interpolate(y, [0, clampMax], [0, clampMax], Extrapolate.CLAMP)
           } else {
             const { y } = event.contentOffset
             scrollYCurrent.value = y

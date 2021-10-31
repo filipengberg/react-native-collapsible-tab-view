@@ -81,6 +81,7 @@ export const Container = React.memo(
         pagerProps,
         onIndexChange,
         onTabChange,
+        overScrollEnabled = false,
       },
       ref
     ) => {
@@ -466,6 +467,7 @@ export const Container = React.memo(
             snappingTo,
             contentHeights,
             headerTranslateY,
+            overScrollEnabled,
           }}
         >
           <Animated.View
